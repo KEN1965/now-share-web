@@ -21,15 +21,11 @@ const roomInput = document.getElementById("roomInput");
 const joinButton = document.getElementById("joinButton");
 
 const currentRoom = document.getElementById("currentRoom");
-
 const pageTitle = document.getElementById("pageTitle");
 const sharedUrl = document.getElementById("sharedUrl");
 const openButton = document.getElementById("openButton");
 
-joinButton.addEventListener("click", () => {
-
-  const roomCode = roomInput.value.trim();
-
+function joinRoom(roomCode) {
   if (!roomCode) {
     alert("ROOMコードを入力してください");
     return;
@@ -43,7 +39,6 @@ joinButton.addEventListener("click", () => {
   const roomRef = ref(database, "rooms/" + roomCode);
 
   onValue(roomRef, (snapshot) => {
-
     const data = snapshot.val();
 
     if (!data) {
@@ -58,14 +53,19 @@ joinButton.addEventListener("click", () => {
 
     openButton.href = data.url;
     openButton.style.display = "inline-block";
-
   });
-});
-   // URLからROOM取得
-    const params = new URLSearchParams(window.location.search);
-    const roomFromUrl = params.get("room");
+}
 
-    if (roomFromUrl) {
-      roomInput.value = roomFromUrl;
-      joinButton.click();
-    }
+joinButton.addEventListener("click", () => {
+  const roomCode = roomInput.value.trim();
+  joinRoom(roomCode);
+});
+
+// URLからROOM取得
+const params = new URLSearchParams(window.location.search);
+const roomFromUrl = params.get("room");
+
+if (roomFromUrl) {
+  roomInput.value = roomFromUrl;
+  joinRoom(roomFromUrl);
+}
