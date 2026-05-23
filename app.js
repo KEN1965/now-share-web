@@ -60,7 +60,8 @@ joinButton.addEventListener("click", () => {
     openButton.style.display = "inline-block";
 
   });
-    // URLからROOM取得
+});
+   // URLからROOM取得
     const params = new URLSearchParams(window.location.search);
     const roomFromUrl = params.get("room");
 
@@ -68,5 +69,3 @@ joinButton.addEventListener("click", () => {
       roomInput.value = roomFromUrl;
       joinButton.click();
     }
-});
-
