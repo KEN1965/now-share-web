@@ -7,142 +7,121 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
   color: #0b2d68;
-  background:
-    radial-gradient(circle at 8% 35%, rgba(255,255,255,0.7) 0 0.7%, transparent 0.8%),
-    radial-gradient(circle at 94% 34%, rgba(255,255,255,0.8) 0 0.6%, transparent 0.7%),
-    radial-gradient(circle at 9% 65%, rgba(255,255,255,0.5) 0 2.5%, transparent 2.6%),
-    linear-gradient(135deg, #edf8ff 0%, #d8edff 50%, #c7e4ff 100%);
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.8), transparent 28%),
-    radial-gradient(circle at 100% 70%, rgba(255,255,255,0.35), transparent 24%);
-  opacity: 0.9;
+  background: linear-gradient(135deg, #eef8ff 0%, #d9eeff 55%, #c8e5ff 100%);
+  overflow: hidden;
 }
 
 .container {
-  position: relative;
+  width: 100%;
   max-width: 980px;
+  height: 100vh;
   margin: 0 auto;
-  padding: 86px 24px 44px;
+  padding: 48px 24px 32px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  margin: 0 0 18px;
-  font-size: clamp(42px, 6vw, 72px);
+  margin: 0;
+  font-size: 52px;
   line-height: 1.1;
   font-weight: 900;
-  letter-spacing: 0.02em;
   color: #082b67;
-  text-shadow: 0 4px 0 rgba(255,255,255,0.7);
 }
 
 .subtitle {
-  margin: 0 0 48px;
-  font-size: clamp(18px, 2.2vw, 24px);
-  font-weight: 600;
+  margin: 12px 0 34px;
+  font-size: 20px;
+  font-weight: 700;
   color: #5d7392;
 }
 
 .card {
-  width: min(860px, 100%);
-  margin: 0 auto;
-  padding: 54px 64px 46px;
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.78);
+  width: min(820px, 92vw);
+  padding: 42px 54px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(255,255,255,0.95);
-  box-shadow:
-    0 30px 70px rgba(74, 135, 190, 0.22),
-    inset 0 0 0 1px rgba(255,255,255,0.55);
-  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 60px rgba(74, 135, 190, 0.22);
 }
 
 .iconCircle {
-  width: 96px;
-  height: 96px;
-  margin: -8px auto 22px;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 42px;
-  background: rgba(217, 239, 255, 0.9);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8);
+  font-size: 36px;
+  background: rgba(220, 241, 255, 0.95);
 }
 
 .label {
-  margin: 0 0 24px;
+  margin: 0 0 18px;
   color: #147be0;
-  font-size: clamp(20px, 2.4vw, 26px);
-  font-weight: 800;
+  font-size: 24px;
+  font-weight: 900;
 }
 
 .line-label {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 20px;
 }
 
 .line-label::before,
 .line-label::after {
   content: "";
-  width: 64px;
+  width: 72px;
   height: 2px;
   background: #b7d8f6;
 }
 
 #pageTitle {
-  margin: 0 0 28px;
+  margin: 0 0 24px;
   color: #092b65;
-  font-size: clamp(34px, 5vw, 54px);
-  line-height: 1.25;
+  font-size: 44px;
+  line-height: 1.2;
   font-weight: 900;
 }
 
 .urlBox {
-  width: min(640px, 100%);
-  margin: 0 auto 32px;
-  padding: 22px 28px;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 20px 26px;
   border-radius: 18px;
   border: 1px solid #b8daf9;
-  background: rgba(235, 247, 255, 0.9);
+  background: rgba(235, 247, 255, 0.92);
   color: #15325f;
-  font-size: clamp(20px, 2.6vw, 30px);
+  font-size: 22px;
   line-height: 1.55;
   word-break: break-all;
-  white-space: normal;
 }
 
 #openButton {
   display: inline-block;
-  min-width: 330px;
-  padding: 20px 42px;
+  min-width: 320px;
+  padding: 18px 44px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #22b8ff 0%, #0064e8 100%);
+  background: linear-gradient(135deg, #20b5ff 0%, #0064e8 100%);
   color: white;
   text-decoration: none;
-  font-size: clamp(20px, 2.8vw, 30px);
+  font-size: 26px;
   font-weight: 900;
-  box-shadow: 0 16px 30px rgba(0, 98, 230, 0.28);
-  transition: 0.2s;
+  box-shadow: 0 14px 28px rgba(0, 98, 230, 0.28);
 }
 
 #openButton:hover {
-  transform: translateY(-2px);
   opacity: 0.92;
 }
 
 .footerText {
-  margin-top: 34px;
+  margin-top: 24px;
   color: #5d7392;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -162,7 +141,6 @@ h1 {
 }
 
 #joinButton {
-  display: inline-block;
   background: linear-gradient(135deg, #22b8ff 0%, #0064e8 100%);
   color: white;
   padding: 16px 32px;
@@ -173,33 +151,41 @@ h1 {
   cursor: pointer;
 }
 
-@media (max-width: 640px) {
+@media (max-height: 760px) {
   .container {
-    padding-top: 54px;
+    padding-top: 28px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    margin-bottom: 22px;
   }
 
   .card {
-    padding: 36px 22px;
+    padding: 32px 44px;
+  }
+
+  .iconCircle {
+    width: 58px;
+    height: 58px;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  #pageTitle {
+    font-size: 34px;
+  }
+
+  .urlBox {
+    font-size: 18px;
+    margin-bottom: 22px;
   }
 
   #openButton {
-    min-width: auto;
-    width: 100%;
+    font-size: 22px;
+    padding: 15px 36px;
   }
-}
-#entryQr {
-  width: 220px;
-  height: 220px;
-  margin: 20px auto;
-  padding: 14px;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 14px 28px rgba(0, 98, 230, 0.16);
-}
-
-.entryUrl {
-  font-size: 32px;
-  font-weight: 900;
-  color: #082b67;
-  margin: 20px 0 24px;
 }
