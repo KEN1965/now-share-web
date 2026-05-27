@@ -11,18 +11,23 @@
     <h1>AI勉強会 in KURE</h1>
     <p class="subtitle">発表者が共有したURLをここに表示します</p>
 
-    <section id="roomSection" class="card">
-      <p class="label">ROOMコードを入力</p>
+    <<section id="roomSection" class="card">
+  <p class="label line-label">参加はこちら</p>
 
-      <input
-        id="roomInput"
-        type="text"
-        placeholder="例：AI2026"
-        autocomplete="off"
-      />
+  <div id="entryQr"></div>
 
-      <button id="joinButton">参加する</button>
-    </section>
+  <p class="entryUrl">bit.ly/KureAI-Study</p>
+
+  <input
+    id="roomInput"
+    type="text"
+    value="AI2026"
+    autocomplete="off"
+  />
+
+  <button id="joinButton">参加する</button>
+  
+</section>
 
     <section id="shareSection" class="card hidden">
       <div class="iconCircle">🖥️</div>
@@ -43,6 +48,8 @@
     <p class="footerText">🌐 Webサイトは発表者が共有しています</p>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script type="module" src="app.js"></script>
+
 </body>
 </html>

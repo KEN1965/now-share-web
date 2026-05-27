@@ -65,3 +65,12 @@ if (roomFromUrl) {
   roomInput.value = roomFromUrl;
   joinRoom(roomFromUrl);
 }
+const entryQr = document.getElementById("entryQr");
+
+if (entryQr) {
+  new QRCode(entryQr, {
+    text: "https://bit.ly/KureAI-Study",
+    width: 220,
+    height: 220
+  });
+}

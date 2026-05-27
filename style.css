@@ -187,3 +187,19 @@ h1 {
     width: 100%;
   }
 }
+#entryQr {
+  width: 220px;
+  height: 220px;
+  margin: 20px auto;
+  padding: 14px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(0, 98, 230, 0.16);
+}
+
+.entryUrl {
+  font-size: 32px;
+  font-weight: 900;
+  color: #082b67;
+  margin: 20px 0 24px;
+}
