@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Now Share</title>
+  <title>AI勉強会 in KURE</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
-    <h1>Now Share</h1>
+    <h1>AI勉強会 in KURE</h1>
     <p class="subtitle">発表者が共有したURLをここに表示します</p>
 
     <section id="roomSection" class="card">
@@ -25,19 +25,22 @@
     </section>
 
     <section id="shareSection" class="card hidden">
-      <p class="label">参加中のROOM</p>
-      <p id="currentRoom">AI2026</p>
+      <div class="iconCircle">🖥️</div>
 
-      <hr />
+      <p class="label line-label">現在共有中のWebサイト</p>
 
-      <p class="label">現在共有中</p>
       <h2 id="pageTitle">まだ共有されていません</h2>
-      <p id="sharedUrl">発表者がURLを共有すると、ここに表示されます。</p>
+
+      <div id="sharedUrl" class="urlBox">
+        発表者がURLを共有すると、ここに表示されます。
+      </div>
 
       <a id="openButton" href="#" target="_blank">
-        このページを開く
+        ↗ このページを開く
       </a>
     </section>
+
+    <p class="footerText">🌐 Webサイトは発表者が共有しています</p>
   </main>
 
   <script type="module" src="app.js"></script>

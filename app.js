@@ -20,7 +20,6 @@ const shareSection = document.getElementById("shareSection");
 const roomInput = document.getElementById("roomInput");
 const joinButton = document.getElementById("joinButton");
 
-const currentRoom = document.getElementById("currentRoom");
 const pageTitle = document.getElementById("pageTitle");
 const sharedUrl = document.getElementById("sharedUrl");
 const openButton = document.getElementById("openButton");
@@ -30,8 +29,6 @@ function joinRoom(roomCode) {
     alert("ROOMコードを入力してください");
     return;
   }
-
-  currentRoom.textContent = roomCode;
 
   roomSection.classList.add("hidden");
   shareSection.classList.remove("hidden");
@@ -61,7 +58,6 @@ joinButton.addEventListener("click", () => {
   joinRoom(roomCode);
 });
 
-// URLからROOM取得
 const params = new URLSearchParams(window.location.search);
 const roomFromUrl = params.get("room");
 
