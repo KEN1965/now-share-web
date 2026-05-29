@@ -8,7 +8,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
   color: #0b2d68;
   background: linear-gradient(135deg, #eef8ff 0%, #d9eeff 55%, #c8e5ff 100%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .container {
@@ -187,5 +188,72 @@ h1 {
   #openButton {
     font-size: 22px;
     padding: 15px 36px;
+  }
+}
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .container {
+    height: auto;
+    min-height: 100vh;
+    padding: 36px 16px 24px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin: 10px 0 24px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 28px 18px;
+    border-radius: 24px;
+  }
+
+  .iconCircle {
+    width: 58px;
+    height: 58px;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .label {
+    font-size: 18px;
+  }
+
+  .line-label::before,
+  .line-label::after {
+    width: 36px;
+  }
+
+  #pageTitle {
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+
+  .urlBox {
+    font-size: 16px;
+    padding: 16px;
+    margin-bottom: 22px;
+  }
+
+  #openButton {
+    width: 100%;
+    min-width: 0;
+    font-size: 20px;
+    padding: 16px 20px;
+  }
+
+  .footerText {
+    font-size: 13px;
+    margin-top: 18px;
   }
 }
