@@ -257,3 +257,75 @@ h1 {
     margin-top: 18px;
   }
 }
+@media (max-width: 640px), (max-height: 760px) {
+  body {
+    overflow: hidden;
+  }
+
+  .container {
+    height: 100vh;
+    padding: 18px 14px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin: 8px 0 14px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px 16px;
+    border-radius: 22px;
+  }
+
+  .iconCircle {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .line-label::before,
+  .line-label::after {
+    width: 28px;
+  }
+
+  #pageTitle {
+    font-size: clamp(22px, 7vw, 30px);
+    margin-bottom: 12px;
+    line-height: 1.15;
+  }
+
+  .urlBox {
+    font-size: 13px;
+    line-height: 1.35;
+    padding: 12px;
+    margin-bottom: 14px;
+    max-height: 74px;
+    overflow: hidden;
+  }
+
+  #openButton {
+    width: 100%;
+    min-width: 0;
+    font-size: 18px;
+    padding: 13px 16px;
+    border-radius: 14px;
+  }
+
+  .footerText {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
