@@ -4,65 +4,57 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
   color: #0b2d68;
   background: linear-gradient(135deg, #eef8ff 0%, #d9eeff 55%, #c8e5ff 100%);
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .container {
-  width: 100%;
+  height: 100dvh;
   max-width: 980px;
-  height: 100vh;
   margin: 0 auto;
-  padding: 48px 24px 32px;
+  padding: 36px 20px 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 h1 {
   margin: 0;
-  font-size: 52px;
+  font-size: clamp(30px, 5vw, 52px);
   line-height: 1.1;
   font-weight: 900;
   color: #082b67;
 }
 
 .subtitle {
-  margin: 12px 0 34px;
-  font-size: 20px;
+  margin: 10px 0 22px;
+  font-size: clamp(14px, 2vw, 20px);
   font-weight: 700;
   color: #5d7392;
 }
 
 .card {
-  width: min(820px, 92vw);
-  padding: 42px 54px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.82);
+  width: min(820px, 100%);
+  margin: 0 auto;
+  padding: 28px 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.84);
   border: 1px solid rgba(255,255,255,0.95);
-  box-shadow: 0 24px 60px rgba(74, 135, 190, 0.22);
+  box-shadow: 0 20px 50px rgba(74, 135, 190, 0.2);
 }
 
-.iconCircle {
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 22px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 36px;
-  background: rgba(220, 241, 255, 0.95);
+.hidden {
+  display: none;
 }
 
 .label {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   color: #147be0;
-  font-size: 24px;
+  font-size: clamp(16px, 2.4vw, 24px);
   font-weight: 900;
 }
 
@@ -70,331 +62,192 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .line-label::before,
 .line-label::after {
   content: "";
-  width: 72px;
+  width: 54px;
   height: 2px;
   background: #b7d8f6;
 }
 
-#pageTitle {
-  margin: 0 0 24px;
-  color: #092b65;
-  font-size: 44px;
-  line-height: 1.2;
-  font-weight: 900;
-}
-
-.urlBox {
-  width: 100%;
-  margin: 0 auto 30px;
-  padding: 20px 26px;
+#entryQr {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 14px;
+  padding: 10px;
   border-radius: 18px;
-  border: 1px solid #b8daf9;
-  background: rgba(235, 247, 255, 0.92);
-  color: #15325f;
-  font-size: 22px;
-  line-height: 1.55;
-  word-break: break-all;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#openButton {
-  display: inline-block;
-  min-width: 320px;
-  padding: 18px 44px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #20b5ff 0%, #0064e8 100%);
-  color: white;
-  text-decoration: none;
-  font-size: 26px;
+.entryUrl {
+  margin: 0 0 14px;
+  font-size: clamp(20px, 4vw, 34px);
   font-weight: 900;
-  box-shadow: 0 14px 28px rgba(0, 98, 230, 0.28);
-}
-
-#openButton:hover {
-  opacity: 0.92;
-}
-
-.footerText {
-  margin-top: 24px;
-  color: #5d7392;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.hidden {
-  display: none;
+  color: #082b67;
 }
 
 #roomInput {
   width: 80%;
-  max-width: 360px;
-  padding: 16px;
-  font-size: 22px;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 18px;
   text-align: center;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid #b8daf9;
-  margin: 20px 0;
+  margin: 0 0 12px;
 }
 
 #joinButton {
+  display: inline-block;
   background: linear-gradient(135deg, #22b8ff 0%, #0064e8 100%);
   color: white;
-  padding: 16px 32px;
-  border-radius: 14px;
+  padding: 12px 28px;
+  border-radius: 12px;
   border: none;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 18px;
   cursor: pointer;
 }
 
-@media (max-height: 760px) {
-  .container {
-    padding-top: 28px;
-  }
-
-  h1 {
-    font-size: 42px;
-  }
-
-  .subtitle {
-    margin-bottom: 22px;
-  }
-
-  .card {
-    padding: 32px 44px;
-  }
-
-  .iconCircle {
-    width: 58px;
-    height: 58px;
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-
-  #pageTitle {
-    font-size: 34px;
-  }
-
-  .urlBox {
-    font-size: 18px;
-    margin-bottom: 22px;
-  }
-
-  #openButton {
-    font-size: 22px;
-    padding: 15px 36px;
-  }
+.iconCircle {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  background: rgba(220, 241, 255, 0.95);
 }
+
+#pageTitle {
+  margin: 0 0 14px;
+  color: #092b65;
+  font-size: clamp(24px, 5vw, 42px);
+  line-height: 1.15;
+  font-weight: 900;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.urlBox {
+  width: 100%;
+  margin: 0 auto 18px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid #b8daf9;
+  background: rgba(235, 247, 255, 0.92);
+  color: #15325f;
+  font-size: clamp(12px, 2.6vw, 20px);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#openButton {
+  display: block;
+  width: min(360px, 100%);
+  margin: 0 auto;
+  padding: 15px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #20b5ff 0%, #0064e8 100%);
+  color: white;
+  text-decoration: none;
+  font-size: clamp(18px, 4vw, 26px);
+  font-weight: 900;
+  box-shadow: 0 14px 28px rgba(0, 98, 230, 0.25);
+}
+
+.footerText {
+  margin: 14px 0 0;
+  color: #5d7392;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* スマホ最優先：ボタンを必ず表示 */
 @media (max-width: 640px) {
-  body {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
   .container {
-    height: auto;
-    min-height: 100vh;
-    padding: 36px 16px 24px;
+    padding: 10px 12px;
   }
 
   h1 {
-    font-size: 36px;
-    line-height: 1.15;
-  }
-
-  .subtitle {
-    font-size: 15px;
-    margin: 10px 0 24px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 28px 18px;
-    border-radius: 24px;
-  }
-
-  .iconCircle {
-    width: 58px;
-    height: 58px;
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-
-  .label {
-    font-size: 18px;
-  }
-
-  .line-label::before,
-  .line-label::after {
-    width: 36px;
-  }
-
-  #pageTitle {
-    font-size: 28px;
-    margin-bottom: 18px;
-  }
-
-  .urlBox {
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 22px;
-  }
-
-  #openButton {
-    width: 100%;
-    min-width: 0;
-    font-size: 20px;
-    padding: 16px 20px;
-  }
-
-  .footerText {
-    font-size: 13px;
-    margin-top: 18px;
-  }
-}
-@media (max-width: 640px), (max-height: 760px) {
-  body {
-    overflow: hidden;
-  }
-
-  .container {
-    height: 100vh;
-    padding: 18px 14px;
-    justify-content: center;
-  }
-
-  h1 {
-    font-size: clamp(28px, 8vw, 40px);
-    line-height: 1.1;
-  }
-
-  .subtitle {
-    font-size: 14px;
-    margin: 8px 0 14px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 20px 16px;
-    border-radius: 22px;
-  }
-
-  .iconCircle {
-    width: 48px;
-    height: 48px;
     font-size: 24px;
-    margin-bottom: 10px;
   }
 
-  .label {
-    font-size: 16px;
-    margin-bottom: 10px;
+  .subtitle {
+    display: none;
+  }
+
+  .card {
+    padding: 12px;
+    border-radius: 18px;
   }
 
   .line-label::before,
   .line-label::after {
-    width: 28px;
+    display: none;
   }
 
-  #pageTitle {
-    font-size: clamp(22px, 7vw, 30px);
-    margin-bottom: 12px;
-    line-height: 1.15;
+  .label {
+    font-size: 14px;
+    margin-bottom: 8px;
   }
 
-  .urlBox {
-    font-size: 13px;
-    line-height: 1.35;
-    padding: 12px;
-    margin-bottom: 14px;
-    max-height: 74px;
-    overflow: hidden;
+  #entryQr {
+    width: 130px;
+    height: 130px;
+    padding: 8px;
+    margin-bottom: 8px;
   }
 
-  #openButton {
-    width: 100%;
-    min-width: 0;
-    font-size: 18px;
-    padding: 13px 16px;
-    border-radius: 14px;
+  .entryUrl {
+    font-size: 20px;
+    margin-bottom: 8px;
   }
 
-  .footerText {
-    font-size: 12px;
-    margin-top: 10px;
-  }
-}
-@media (max-width: 640px) {
-  body {
-    overflow: hidden;
+  #roomInput {
+    padding: 9px;
+    font-size: 16px;
+    margin-bottom: 8px;
   }
 
-  .container {
-    height: 100dvh;
-    padding: 12px;
-    justify-content: center;
-  }
-
-  h1 {
-    font-size: 28px;
-    line-height: 1.1;
-  }
-
-  .subtitle {
-    font-size: 12px;
-    margin: 6px 0 10px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 16px 14px;
-    border-radius: 20px;
+  #joinButton {
+    padding: 10px 22px;
+    font-size: 16px;
   }
 
   .iconCircle {
     display: none;
   }
 
-  .label {
-    font-size: 15px;
+  #pageTitle {
+    font-size: 21px;
     margin-bottom: 8px;
   }
 
-  .line-label::before,
-  .line-label::after {
-    width: 22px;
-  }
-
-  #pageTitle {
-    font-size: 22px;
-    line-height: 1.15;
-    margin-bottom: 10px;
-  }
-
   .urlBox {
-    font-size: 12px;
-    line-height: 1.3;
-    padding: 10px;
-    margin-bottom: 12px;
-    max-height: 54px;
-    overflow: hidden;
+    font-size: 11px;
+    padding: 8px;
+    margin-bottom: 10px;
   }
 
   #openButton {
     width: 100%;
-    min-width: 0;
+    padding: 12px;
     font-size: 17px;
-    padding: 12px 14px;
-    border-radius: 12px;
   }
 
   .footerText {
-    font-size: 11px;
-    margin-top: 8px;
+    display: none;
   }
 }
