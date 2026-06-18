@@ -1,53 +1,79 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI勉強会 in KURE</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>AI勉強会 in KURE</h1>
-    <p class="subtitle">発表者が共有したURLをここに表示します</p>
 
-    <section id="roomSection" class="card">
-      <p class="label line-label">参加はこちら</p>
+  <main class="container">
+
+    <h1>AI勉強会 in KURE</h1>
+
+    <p class="subtitle">
+      発表者が共有したURLをここに表示します
+    </p>
+
+    <!-- 参加QR -->
+    <section class="card">
+
+      <p class="label line-label">
+        参加はこちら
+      </p>
 
       <div id="entryQr"></div>
 
-      <p class="entryUrl">bit.ly/KureAI-Study</p>
+      <p class="entryUrl">
+        bit.ly/KureAI-Study
+      </p>
 
-      <input
-        id="roomInput"
-        type="text"
-        value="AI2026"
-        autocomplete="off"
-      />
-
-      <button id="joinButton">参加する</button>
     </section>
 
-    <section id="shareSection" class="card hidden">
-      <div class="iconCircle">🖥️</div>
 
-      <p class="label line-label">現在共有中のWebサイト</p>
+    <!-- 現在共有中 -->
+    <section id="shareSection" class="card">
 
-      <h2 id="pageTitle">まだ共有されていません</h2>
+      <div class="iconCircle">
+        🖥️
+      </div>
+
+      <p class="label line-label">
+        現在共有中のWebサイト
+      </p>
+
+      <h2 id="pageTitle">
+        まだ共有されていません
+      </h2>
 
       <div id="sharedUrl" class="urlBox">
         発表者がURLを共有すると、ここに表示されます。
       </div>
 
-      <a id="openButton" href="#" target="_blank">
+      <a
+        id="openButton"
+        href="#"
+        target="_blank"
+        style="display:none;"
+      >
         ↗ このページを開く
       </a>
+
     </section>
 
-    <p class="footerText">🌐 Webサイトは発表者が共有しています</p>
+    <p class="footerText">
+      🌐 Webサイトは発表者が共有しています
+    </p>
+
   </main>
 
+  <!-- QRライブラリ -->
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+  <!-- アプリ -->
   <script type="module" src="app.js"></script>
+
 </body>
 </html>

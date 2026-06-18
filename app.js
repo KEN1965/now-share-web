@@ -14,59 +14,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-const roomSection = document.getElementById("roomSection");
-const shareSection = document.getElementById("shareSection");
-
-const roomInput = document.getElementById("roomInput");
-const joinButton = document.getElementById("joinButton");
-
 const pageTitle = document.getElementById("pageTitle");
 const sharedUrl = document.getElementById("sharedUrl");
 const openButton = document.getElementById("openButton");
-
-function joinRoom(roomCode) {
-  if (!roomCode) {
-    alert("ROOMコードを入力してください");
-    return;
-  }
-
-  roomSection.classList.add("hidden");
-  shareSection.classList.remove("hidden");
-
-  const roomRef = ref(database, "rooms/" + roomCode);
-
-  onValue(roomRef, (snapshot) => {
-    const data = snapshot.val();
-
-    if (!data) {
-      pageTitle.textContent = "まだ共有されていません";
-      sharedUrl.textContent = "発表者がURLを共有すると、ここに表示されます。";
-      openButton.style.display = "none";
-      return;
-    }
-
-    pageTitle.textContent = data.title || "共有ページ";
-    sharedUrl.textContent = data.url;
-
-    openButton.href = data.url;
-    openButton.style.display = "inline-block";
-  });
-}
-
-joinButton.addEventListener("click", () => {
-  const roomCode = roomInput.value.trim();
-  joinRoom(roomCode);
-});
-
-const params = new URLSearchParams(window.location.search);
-const roomFromUrl = params.get("room");
-
-if (roomFromUrl) {
-  roomInput.value = roomFromUrl;
-  joinRoom(roomFromUrl);
-}
 const entryQr = document.getElementById("entryQr");
 
+let lastOpenedUrl = "";
+
+// 参加用QRコード表示
 if (entryQr) {
   new QRCode(entryQr, {
     text: "https://bit.ly/KureAI-Study",
@@ -74,3 +29,29 @@ if (entryQr) {
     height: 220
   });
 }
+
+// Firebaseの共有先
+const shareRef = ref(database, "now-share");
+
+onValue(shareRef, (snapshot) => {
+  const data = snapshot.val();
+
+  if (!data || data.active === false || !data.url) {
+    pageTitle.textContent = "まだ共有されていません";
+    sharedUrl.textContent = "発表者がURLを共有すると、ここに表示されます。";
+    openButton.style.display = "none";
+    return;
+  }
+
+  pageTitle.textContent = "共有ページ";
+  sharedUrl.textContent = data.url;
+
+  openButton.href = data.url;
+  openButton.style.display = "inline-block";
+
+  // URLが変わった時だけ新しいタブで開く
+  if (data.url !== lastOpenedUrl) {
+    lastOpenedUrl = data.url;
+    window.open(data.url, "_blank");
+  }
+});

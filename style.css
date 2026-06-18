@@ -1,155 +1,114 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
-  min-height: 100dvh;
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
-  color: #0b2d68;
-  background: linear-gradient(135deg, #eef8ff 0%, #d9eeff 55%, #c8e5ff 100%);
-  overflow: hidden;
+  font-family: sans-serif;
+  background: #eaf6ff;
+  color: #333;
 }
 
 .container {
-  width: 100%;
-  max-width: 980px;
-  height: 100dvh;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 40px 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 24px 16px 40px;
 }
 
 h1 {
-  margin: 0 0 18px;
-  font-size: 52px;
-  font-weight: 900;
-  color: #082b67;
+  text-align: center;
+  color: #1f5fa8;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  margin: 0 0 28px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #5d7392;
+  text-align: center;
+  color: #666;
+  margin-bottom: 24px;
 }
 
 .card {
-  width: min(820px, 92vw);
-  margin: 0 auto;
-  padding: 36px 46px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(255,255,255,0.95);
-  box-shadow: 0 24px 60px rgba(74, 135, 190, 0.22);
-}
-
-.hidden {
-  display: none;
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
 }
 
 .label {
-  margin: 0 0 18px;
-  color: #147be0;
-  font-size: 24px;
-  font-weight: 900;
+  color: #1f5fa8;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.line-label::before,
-.line-label::after {
-  display: none;
+#entryQr {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.entryUrl {
+  color: #666;
+  font-size: 14px;
 }
 
 .iconCircle {
-  display: none;
+  width: 70px;
+  height: 70px;
+  background: #d9ecff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  margin: 0 auto 20px;
 }
 
 #pageTitle {
-  margin: 0 0 24px;
-  color: #092b65;
-  font-size: 42px;
-  line-height: 1.2;
-  font-weight: 900;
+  color: #1f5fa8;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .urlBox {
-  width: 100%;
-  margin: 0 auto 24px;
-  padding: 14px 18px;
-  border-radius: 16px;
-  border: 1px solid #b8daf9;
-  background: rgba(235, 247, 255, 0.92);
-  color: #15325f;
-  font-size: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  background: #f5f9ff;
+  border: 2px solid #d9ecff;
+  border-radius: 12px;
+  padding: 16px;
+  word-break: break-all;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 #openButton {
-  display: block;
-  width: min(360px, 100%);
-  margin: 0 auto;
-  padding: 16px 20px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #20b5ff 0%, #0064e8 100%);
+  display: inline-block;
+  background: #4b9fff;
   color: white;
   text-decoration: none;
-  font-size: 24px;
-  font-weight: 900;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#openButton:hover {
+  background: #3188eb;
 }
 
 .footerText {
-  display: none;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
 }
 
-/* スマホ専用 */
-@media (max-width: 640px) {
+@media (max-width: 600px) {
+
   .container {
-    padding: 20px 16px;
-    justify-content: center;
+    padding: 16px;
   }
 
-  h1 {
-    font-size: 30px;
-    margin-bottom: 18px;
-  }
-
-  .subtitle,
-  .urlBox,
-  .iconCircle,
-  .footerText {
-    display: none;
-  }
-
-  #shareSection {
-    width: 100%;
-    padding: 28px 20px;
-    border-radius: 24px;
-  }
-
-  #shareSection .label {
-    font-size: 18px;
-    margin-bottom: 18px;
+  .card {
+    padding: 20px;
   }
 
   #pageTitle {
-    font-size: 30px;
-    margin-bottom: 24px;
-  }
-
-  #openButton {
-    width: 100%;
-    padding: 18px;
-    font-size: 22px;
-    border-radius: 16px;
-    position: static !important;
-  }
-
-  #roomSection {
-    display: none;
+    font-size: 20px;
   }
 }
